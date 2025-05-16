@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nozz Trick</title>
+
+  <!-- Link ke file CSS lokal -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Poppins dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome untuk ikon media sosial -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Kartu perkenalan -->
+    <div class="card">
+      <h2>Hey There !</h2>
+      <p>I'm <strong>Nozz</strong>, an Android App Developer & UI Designer based in Indonesia <span>🇮🇩</span></p>
+      <a class="btn" href="mailto:nozzdev16@gmail.com">Contact Me</a>
+    </div>
+
+    <!-- Kartu sosial media -->
+    <div class="card">
+      <h2>Social Media</h2>
+      <p>Follow me on social media for updates & latest projects!</p>
+
+      <div class="social-list">
+        <div class="social-item">
+          <span><i class="fab fa-tiktok"></i> TikTok</span>
+          <a class="btn" href="https://www.tiktok.com/@nozz7z" target="_blank">Follow</a>
+        </div>
+        <div class="social-item">
+          <span><i class="fab fa-youtube"></i> YouTube</span>
+          <a class="btn" href="https://youtube.com/@nozztr" target="_blank">Follow</a>
+        </div>
+        <div class="social-item">
+          <span><i class="fab fa-github"></i> GitHub</span>
+          <a class="btn" href="https://github.com/Nozz7z" target="_blank">Follow</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kartu proyek -->
+    <div class="card project-card">
+      <h2>My Projects</h2>
+      <p>Here’s a project I'm currently working on:</p>
+
+      <a href="page_download/page_download.html" class="project-link">
+        <div class="project-header">
+          <div class="project-info">
+            <h3>Flux DNS</h3>
+            <p class="project-desc">A fast and lightweight DNS changer app for Android. No root required, built for speed & privacy.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Kartu tim -->
+    <div class="card">
+      <h2>My Team</h2>
+      <p>I'm part of a team focused on developing Android gaming tools.</p>
+      <div class="team-header">
+        <div class="team-info">
+          <h3>Xpert Team</h3>
+          <p class="team-desc">Android Application Tools Developers</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 <strong>NozzDev</strong>. Built with <span class="heart">♥</span> and code. All rights Reserved</p>
+  </footer>
+
+  <!-- Script untuk animasi fade-in dan efek ripple pada tombol -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('.card').forEach((el, i) => {
+        el.style.animationDelay = `${i * 0.3}s`;
+        el.classList.add('fade-in');
+      });
+    });
+
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const ripple = document.createElement('span');
+        ripple.classList.add('ripple');
+        btn.appendChild(ripple);
+
+        const rect = btn.getBoundingClientRect();
+        ripple.style.left = `${e.clientX - rect.left}px`;
+        ripple.style.top = `${e.clientY - rect.top}px`;
+
+        ripple.addEventListener('animationend', () => {
+          ripple.remove();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
