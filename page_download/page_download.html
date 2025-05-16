@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flux DNS - Download</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="header fade-in">
+      <img src="assets/img/ic_flux.png" class="icon" alt="Flux Icon"/>
+      <div class="info">
+        <h1>Flux DNS</h1>
+        <p class="dev">By NozzTick</p>
+      </div>
+    </div>
+
+    <button class="download-btn fade-in" id="downloadBtn">
+      <span class="btn-text">Download APK</span>
+      <span class="spinner"></span>
+    </button>
+
+    <div class="description fade-in">
+    <a href="more/page_more.html" class="read-more">
+        Read more <i class="fas fa-arrow-right"></i>
+      </a>
+      <p>
+        Flux DNS is a powerful and lightweight DNS changer designed to improve your internet experience on Android devices. Whether you’re looking for faster browsing, better security, or access to restricted content, Flux DNS delivers a seamless solution — without needing root access.
+        
+      </p>
+      
+    </div>
+
+    <h3 class="fade-in">Preview</h3>
+    <div class="screenshots fade-in">
+      <img src="assets/img/s2.png" alt="Screenshot 1">
+      <img src="assets/img/s3.png" alt="Screenshot 2">
+      <img src="assets/img/s4.png" alt="Screenshot 3">
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2025 <strong>NozzDev</strong>. Built with <span class="heart">♥</span> and code. All rights Reserved
+  </div>
+
+  <script>
+    // Fade in animasi saat page dimuat
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.fade-in').forEach((el, i) => {
+        setTimeout(() => el.classList.add('show'), i * 150);
+      });
+    });
+
+    // Efek loading tombol download
+    const downloadBtn = document.getElementById('downloadBtn');
+    const btnText = document.querySelector('.btn-text');
+    const spinner = document.querySelector('.spinner');
+
+    downloadBtn.addEventListener('click', () => {
+      downloadBtn.classList.add('loading');
+      btnText.textContent = "";
+      setTimeout(() => {
+        window.location.href = "assets/apk/flux.apk";
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
